@@ -72,7 +72,7 @@ export default function Page() {
    <div className="bg-black text-white">
 
       {/* HEADER */}
-      <div className="bg-[#2e7d32] px-4 pt-10 pb-2">
+      <div className="bg-[#2e7d32] px-4 pt-11 pb-2">
         <div className="flex items-center gap-4">
           <FaArrowLeft className="text-white text-sm" />
           <div>
@@ -193,7 +193,7 @@ export default function Page() {
       </div>
 
       {/* INPUTS */}
-     <div className="p-4 bg-black border-t border-gray-800 space-y-3 mt-59">
+     <div className="p-4 bg-black border-t border-gray-800 space-y-3 mt-[500px]">
         
         <input
           type="text"
