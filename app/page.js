@@ -30,14 +30,14 @@ export default function Page() {
   const [open, setOpen] = useState(false);
   const [time, setTime] = useState("");
 
-  // 🔥 NEW STATES
+  // 🔥 Inputs
   const [name, setName] = useState("");
   const [upi, setUpi] = useState("");
 
+  // 🔥 Random
   const [transactionId, setTransactionId] = useState("");
   const [utr, setUtr] = useState("");
 
-  // 🔥 Random generator
   const generateRandomNumber = (length) => {
     let result = "";
     for (let i = 0; i < length; i++) {
@@ -69,16 +69,14 @@ export default function Page() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-black text-white flex flex-col">
+   <div className="bg-black text-white">
 
       {/* HEADER */}
       <div className="bg-[#2e7d32] px-4 pt-10 pb-2">
         <div className="flex items-center gap-4">
           <FaArrowLeft className="text-white text-sm" />
           <div>
-            <h1 className="text-sm font-semibold">
-              Transaction Successful
-            </h1>
+            <h1 className="text-sm font-semibold">Transaction Successful</h1>
             <p className="text-[12px] text-white/90">{time}</p>
           </div>
         </div>
@@ -131,25 +129,40 @@ export default function Page() {
           {open && (
             <div className="text-sm space-y-4">
 
+              {/* Transaction ID */}
               <div>
                 <p className="text-xs text-gray-400">Transaction ID</p>
                 <div className="flex justify-between items-center">
                   <span>{transactionId}</span>
-                  <MdOutlineFileCopy />
+                  <MdOutlineFileCopy className="text-purple-500 text-lg cursor-pointer" />
                 </div>
               </div>
 
+              {/* Debited From */}
               <div>
                 <p className="text-xs text-gray-400 mb-2">Debited from</p>
 
-                <div className="flex justify-between">
-                  <span>XXXXXXX4987</span>
-                  <span>₹15</span>
-                </div>
+                <div className="flex gap-3 items-center">
+                  
+                  {/* BANK LOGO */}
+                  <img
+                    src="https://play-lh.googleusercontent.com/dYccpbwJFL2BXc1YsOSCPjNX9CmGwqvjB-hMtkCltd9ijBQcyEu5c8sJNyTbNBXnOgI=w480-h960-rw"
+                    className="w-10 h-10 rounded-xl bg-white p-1 object-contain"
+                  />
 
-                <div className="flex justify-between mt-2">
-                  <span>UTR: {utr}</span>
-                  <MdOutlineFileCopy />
+                  <div className="flex-1">
+
+                    <div className="flex justify-between items-center">
+                      <span>XXXXXXX4987</span>
+                      <span className="font-semibold">₹15</span>
+                    </div>
+
+                    <div className="flex justify-between items-center mt-2">
+                      <span className="text-gray-400">UTR: {utr}</span>
+                      <MdOutlineFileCopy className="text-purple-500 text-lg cursor-pointer" />
+                    </div>
+
+                  </div>
                 </div>
 
                 <div className="border-b border-gray-700 mt-3"></div>
@@ -159,28 +172,28 @@ export default function Page() {
           )}
 
           {/* ACTION IMAGE */}
-          <div className="pt-2">
-            <img
-              src="https://i.ibb.co/Txb47FCt/photo-2026-04-21-12-37-47-removebg-preview.png"
-              className="w-full"
-            />
-          </div>
+       <div className="-mx-3 pt-2">
+  <img
+    src="https://i.ibb.co/Txb47FCt/photo-2026-04-21-12-37-47-removebg-preview.png"
+    className="w-full"
+  />
+</div>
 
         </div>
 
         {/* SUPPORT */}
         <div className="bg-[#1a1a1a] p-3 rounded-2xl flex justify-between items-center">
           <div className="flex items-center gap-2">
-            <LuMessageCircleQuestion />
-            <span>Contact PhonePe Support</span>
+            <LuMessageCircleQuestion className="text-lg text-gray-300" />
+            <span className="text-sm">Contact PhonePe Support</span>
           </div>
-          <MdKeyboardArrowRight />
+          <MdKeyboardArrowRight className="text-xl text-gray-400" />
         </div>
 
       </div>
 
-      {/* 🔥 INPUT SECTION */}
-      <div className="p-4 bg-black border-t border-gray-800 space-y-3">
+      {/* INPUTS */}
+     <div className="p-4 bg-black border-t border-gray-800 space-y-3 mt-59">
         
         <input
           type="text"
