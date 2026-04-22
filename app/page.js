@@ -54,13 +54,19 @@ export default function Page() {
     <div className="min-h-screen bg-black text-white">
 
       {/* HEADER */}
-      <div className="bg-[#2e7d32] px-4 py-5 relative">
-        <FaArrowLeft className="absolute left-4 top-6 text-white text-lg" />
-        <div className="pl-8">
-          <h1 className="text-lg font-semibold">Transaction Successful</h1>
-          <p className="text-sm text-white/90 mt-1">{time}</p>
-        </div>
-      </div>
+    {/* HEADER */}
+<div className="bg-[#2e7d32] px-4 pt-10 pb-5 relative">
+  
+  <FaArrowLeft className="absolute left-4 top-10 text-white text-lg" />
+
+  <div className="pl-8">
+    <h1 className="text-lg font-semibold">
+      Transaction Successful
+    </h1>
+    <p className="text-sm text-white/90 mt-1">{time}</p>
+  </div>
+
+</div>
 
       {/* CONTENT */}
       <div className="px-3 mt-4 space-y-3">
