@@ -3,9 +3,8 @@ import { useState, useEffect } from "react";
 import {
   FaArrowLeft,
   FaChevronDown,
-  FaShareAlt,
 } from "react-icons/fa";
-import { MdCall, MdOutlineFileCopy, MdKeyboardArrowRight } from "react-icons/md";
+import { MdOutlineFileCopy, MdKeyboardArrowRight } from "react-icons/md";
 import { LuMessageCircleQuestion } from "react-icons/lu";
 
 
@@ -31,7 +30,22 @@ export default function Page() {
   const [open, setOpen] = useState(false);
   const [time, setTime] = useState("");
 
-  // ✅ Time पहले, फिर Date
+  // 🔥 NEW STATES
+  const [name, setName] = useState("");
+  const [upi, setUpi] = useState("");
+
+  const [transactionId, setTransactionId] = useState("");
+  const [utr, setUtr] = useState("");
+
+  // 🔥 Random generator
+  const generateRandomNumber = (length) => {
+    let result = "";
+    for (let i = 0; i < length; i++) {
+      result += Math.floor(Math.random() * 10);
+    }
+    return result;
+  };
+
   useEffect(() => {
     const now = new Date();
 
@@ -48,34 +62,30 @@ export default function Page() {
     });
 
     setTime(`${t} on ${d}`);
+
+    setTransactionId("T" + generateRandomNumber(22));
+    setUtr(generateRandomNumber(12));
+
   }, []);
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-black text-white flex flex-col">
 
-      
-    {/* HEADER */}
-<div className="bg-[#2e7d32] px-4 pt-10 pb-2">
-  
-  <div className="flex items-center gap-4">
-    
-    {/* Arrow */}
-    <FaArrowLeft className="text-white text-sm" />
-
-    {/* Text */}
-    <div>
-      <h1 className="text-sm font-semibold">
-        Transaction Successful
-      </h1>
-      <p className="text-[12px] text-white/90 ">{time}</p>
-    </div>
-
-  </div>
-
-</div>
+      {/* HEADER */}
+      <div className="bg-[#2e7d32] px-4 pt-10 pb-2">
+        <div className="flex items-center gap-4">
+          <FaArrowLeft className="text-white text-sm" />
+          <div>
+            <h1 className="text-sm font-semibold">
+              Transaction Successful
+            </h1>
+            <p className="text-[12px] text-white/90">{time}</p>
+          </div>
+        </div>
+      </div>
 
       {/* CONTENT */}
-      <div className="px-3 mt-4 space-y-3">
+      <div className="flex-1 px-3 mt-4 space-y-3">
 
         <div className="bg-[#121212] p-4 rounded-2xl space-y-4">
 
@@ -85,11 +95,11 @@ export default function Page() {
           <div className="flex justify-between items-center">
             <div className="flex gap-3 items-center">
               <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center font-bold">
-                AS
+                {name.charAt(0)}
               </div>
               <div>
-                <p className="font-semibold">Ankaraju Sridhar</p>
-                <p className="text-sm">ankarajusridhar12@axl</p>
+                <p className="font-semibold">{name}</p>
+                <p className="text-sm">{upi}</p>
               </div>
             </div>
             <p className="text-lg font-semibold">₹15</p>
@@ -101,7 +111,7 @@ export default function Page() {
           <div className="text-sm">
             <span className="text-gray-400">Banking Name :</span>
             <span className="ml-2 inline-flex items-center gap-1">
-              Ankaraju Sridhar
+              {name}
               <VerifiedIcon />
             </span>
           </div>
@@ -121,41 +131,27 @@ export default function Page() {
           {open && (
             <div className="text-sm space-y-4">
 
-              {/* Transaction ID */}
               <div>
                 <p className="text-xs text-gray-400">Transaction ID</p>
                 <div className="flex justify-between items-center">
-                  <span>T2604081031566625975184</span>
-                  <MdOutlineFileCopy className="text-purple-400 text-lg cursor-pointer" />
+                  <span>{transactionId}</span>
+                  <MdOutlineFileCopy />
                 </div>
               </div>
 
-              {/* Debited From */}
               <div>
                 <p className="text-xs text-gray-400 mb-2">Debited from</p>
 
-                <div className="flex gap-3">
-                  <img
-                    src="https://play-lh.googleusercontent.com/dYccpbwJFL2BXc1YsOSCPjNX9CmGwqvjB-hMtkCltd9ijBQcyEu5c8sJNyTbNBXnOgI=w480-h960-rw"
-                    className="w-10 h-10 rounded-xl bg-white p-1"
-                  />
-
-                  <div className="flex-1">
-
-                    <div className="flex justify-between items-center">
-                      <span>XXXXXXX4987</span>
-                      <span className="font-semibold">₹15</span>
-                    </div>
-
-                    <div className="flex justify-between items-center mt-2">
-                      <span className="text-gray-400">UTR: 633185827829</span>
-                      <MdOutlineFileCopy className="text-purple-400 text-lg cursor-pointer" />
-                    </div>
-
-                  </div>
+                <div className="flex justify-between">
+                  <span>XXXXXXX4987</span>
+                  <span>₹15</span>
                 </div>
 
-                {/* Line */}
+                <div className="flex justify-between mt-2">
+                  <span>UTR: {utr}</span>
+                  <MdOutlineFileCopy />
+                </div>
+
                 <div className="border-b border-gray-700 mt-3"></div>
               </div>
 
@@ -172,18 +168,38 @@ export default function Page() {
 
         </div>
 
-        {/* 🔥 SUPPORT SECTION (UPDATED) */}
+        {/* SUPPORT */}
         <div className="bg-[#1a1a1a] p-3 rounded-2xl flex justify-between items-center">
-          
           <div className="flex items-center gap-2">
-            <LuMessageCircleQuestion className="text-lg text-gray-300" />
-            <span className="text-sm">Contact PhonePe Support</span>
+            <LuMessageCircleQuestion />
+            <span>Contact PhonePe Support</span>
           </div>
-
-          <MdKeyboardArrowRight className="text-xl text-gray-400" />
+          <MdKeyboardArrowRight />
         </div>
 
       </div>
+
+      {/* 🔥 INPUT SECTION */}
+      <div className="p-4 bg-black border-t border-gray-800 space-y-3">
+        
+        <input
+          type="text"
+          placeholder="Enter Name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          className="w-full p-3 rounded-lg bg-[#1a1a1a] text-white outline-none"
+        />
+
+        <input
+          type="text"
+          placeholder="Enter UPI ID"
+          value={upi}
+          onChange={(e) => setUpi(e.target.value)}
+          className="w-full p-3 rounded-lg bg-[#1a1a1a] text-white outline-none"
+        />
+
+      </div>
+
     </div>
   );
 }
