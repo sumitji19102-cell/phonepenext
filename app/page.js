@@ -163,10 +163,10 @@ export default function Page() {
           )}
 
           {/* ACTION IMAGE */}
-          <div className="pt-2">
+          <div className="pt">
             <img
-              src="https://i.ibb.co/Txb47FCt/photo-2026-04-21-12-37-47-removebg-preview.png"
-              className="w-[110%] -ml-[5%]"
+              src="https://i.ibb.co/G4zH0QDg/Chat-GPT-Image-Apr-28-2026-07-54-30-AM-removebg-preview.png"
+              className="pt-[-100px]"
             />
           </div>
 
