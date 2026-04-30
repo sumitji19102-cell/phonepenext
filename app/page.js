@@ -99,7 +99,7 @@ export default function Page() {
           />
         </div>
 <div className="flex justify-center my-3">
-  <div className="h-[1px] w-[350px] bg-gray-700"></div>
+  <div className="h-[1px] w-[380px] bg-gray-700"></div>
 </div>
         {/* TRANSFER */}
         <div className="flex justify-between items-center mt-4">
