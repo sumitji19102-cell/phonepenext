@@ -65,7 +65,7 @@ export default function Page() {
       {/* CARD */}
       <div className="m-3 bg-[#121212] rounded-[14px] p-3">
 
-        <div className="text-[15px] font-normal">Paid to</div>
+        <div className="text-[15px] font-bold">Paid to</div>
 
         <div className="flex items-center mt-3">
           <div className="w-11 h-11 rounded-full bg-[#49A7F3] flex items-center justify-center font-normal mr-3">
@@ -81,7 +81,7 @@ export default function Page() {
             </div>
           </div>
 
-          <div className="text-[16px] font-normal">₹15</div>
+          <div className="text-[16px] font-bold">₹15</div>
         </div>
 
         <div className="h-[1px] bg-gray-700 my-3"></div>
