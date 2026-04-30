@@ -46,17 +46,17 @@ export default function Page() {
       <meta name="theme-color" content="#2ad11e" />
 
       {/* HEADER */}
-      <div className="bg-[#3F8F3A] px-4 py-2 pt-10">
-        <div className="flex items-center gap-6">
+      <div className="bg-[#3F8F3A] px-4 py-1 pt-10">
+        <div className="flex items-center gap-5">
           <FiArrowLeft className="text-[22px]" />
           <div>
             {/* ONLY BOLD */}
-            <div className="text-[18px] font-semibold">
+            <div className="text-[16px] font-semibold">
               Transaction Successful
             </div>
 
             {/* NORMAL */}
-            <div className="text-[13px] opacity-90 font-normal mt-[-2px]">
+            <div className="text-[13px] opacity-90 font-normal mt-[-5px]">
               {dateTime}
             </div>
           </div>
@@ -173,7 +173,7 @@ export default function Page() {
         {/* IMAGE */}
         <div className="flex justify-center">
           <img
-            src="https://i.ibb.co/svQRqggq/photo-2026-04-21-12-37-47-removebg-preview-1.png"
+            src="https://i.ibb.co/fYgRy6dT/photo-2026-04-21-12-37-47-removebg-preview-1-1.png"
             className="w-full"
           />
         </div>
@@ -184,7 +184,7 @@ export default function Page() {
       <div className="m-3 bg-[#121212] rounded-[14px] p-4 flex justify-between items-center">
         <div className="flex items-center">
           <LuMessageCircleQuestion className="mr-2" />
-          Contact PhonePe Support
+        <div className="text-[14px] ml-4"> Contact PhonePe Support</div> 
         </div>
         <MdKeyboardArrowRight />
       </div>
@@ -200,7 +200,7 @@ export default function Page() {
 </div>
 
       {/* INPUTS */}
-      <div className="p-3 space-y-2 mt-[200px]">
+      <div className="p-3 space-y-2 mt-[250px]">
         <input
           value={name}
           onChange={(e) => setName(e.target.value)}
