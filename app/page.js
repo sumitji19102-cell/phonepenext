@@ -85,24 +85,15 @@ export default function Page() {
           <div className="text-[16px] font-bold">₹15</div>
         </div>
 
-<div className="flex justify-center my-3">
+<div className="flex justify-center mt-3 ">
   <div className="h-[1px] w-[370px] bg-gray-700"></div>
 </div>
 
         {/* BANK */}
-        <div className="flex items-center text-[12px] text-gray-400 font-normal">
-          Banking Name :
-          <span className="ml-2 text-[12px]  text-gray-400 font-normal">{name}</span>
-          <img
-            src="https://i.ibb.co/wrx1Dh17/Chat-GPT-Image-Apr-30-2026-04-11-39-PM-removebg-preview.png"
-            className="w-[24px] "
-          />
-        </div>
-<div className="flex justify-center my-3">
-  <div className="h-[1px] w-[370px] bg-gray-700"></div>
-</div>
+     
+
         {/* TRANSFER */}
-        <div className="flex justify-between items-center mt-4">
+        <div className="flex justify-between items-center mt-3">
           <div className="flex items-center">
 
             <img
