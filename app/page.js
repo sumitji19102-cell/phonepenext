@@ -86,7 +86,7 @@ export default function Page() {
         </div>
 
 <div className="flex justify-center my-3">
-  <div className="h-[1px] w-[330px] bg-gray-700"></div>
+  <div className="h-[1px] w-[370px] bg-gray-700"></div>
 </div>
 
         {/* BANK */}
@@ -171,7 +171,7 @@ export default function Page() {
         </div>
 
         <div className="flex justify-center my-3">
-  <div className="h-[1px] w-[300px] bg-gray-700"></div>
+  <div className="h-[1px] w-[370px] bg-gray-700"></div>
 </div>
         {/* IMAGE */}
         <div className="flex justify-center mb-3">
