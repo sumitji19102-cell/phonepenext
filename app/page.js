@@ -64,7 +64,7 @@ export default function Page() {
       </div>
 
       {/* CARD */}
-      <div className="m-3 bg-[#121212] rounded-[14px] p-3">
+      <div className="m-3 bg-[#121212] rounded-[14px] p-3 mx-2 ">
 
         <div className="text-[15px] font-bold">Paid to</div>
 
@@ -181,7 +181,7 @@ export default function Page() {
       </div>
 
       {/* SUPPORT */}
-      <div className="m-3 bg-[#121212] rounded-[14px] p-4 flex justify-between items-center">
+      <div className="m-3 mt-[-5px] bg-[#121212] rounded-[14px] p-4 flex justify-between items-center">
         <div className="flex items-center">
           <LuMessageCircleQuestion className="mr-2" />
         <div className="text-[13px] ml-6"> Contact PhonePe Support</div> 
