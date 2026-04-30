@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { FiArrowLeft } from "react-icons/fi";
 import { MdKeyboardArrowUp, MdKeyboardArrowRight } from "react-icons/md";
 import { LuMessageCircleQuestion } from "react-icons/lu";
+import { IoIosArrowUp } from "react-icons/io";
 
 export default function Page() {
 
@@ -87,14 +88,16 @@ export default function Page() {
         <div className="h-[1px] bg-gray-700 my-3"></div>
 
         {/* BANK */}
-        <div className="flex items-center text-[14px] text-gray-400 font-normal">
+        <div className="flex items-center text-[12px] text-gray-400 font-normal">
           Banking Name :
-          <span className="ml-2  text-gray-400 font-normal">{name}</span>
+          <span className="ml-2 text-[12px]  text-gray-400 font-normal">{name}</span>
           <img
-            src="https://i.ibb.co/svQRqggq/photo-2026-04-21-12-37-47-removebg-preview-1.png"
-            className="w-[12px] ml-1"
+            src="https://i.ibb.co/wrx1Dh17/Chat-GPT-Image-Apr-30-2026-04-11-39-PM-removebg-preview.png"
+            className="w-[24px] "
           />
         </div>
+
+         <div className="h-[1px] bg-gray-700 my-3"></div>
 
         {/* TRANSFER */}
         <div className="flex justify-between items-center mt-4">
@@ -110,7 +113,7 @@ export default function Page() {
             </div>
           </div>
 
-          <MdKeyboardArrowUp />
+          <IoIosArrowUp  />
         </div>
 
         {/* TXN */}
@@ -138,7 +141,7 @@ export default function Page() {
 
           <img
             src="https://play-lh.googleusercontent.com/dYccpbwJFL2BXc1YsOSCPjNX9CmGwqvjB-hMtkCltd9ijBQcyEu5c8sJNyTbNBXnOgI"
-            className="w-7 h-7 rounded-full mr-2 mt-1"
+            className="w-7 h-7 rounded-lg mr-2 mt-1"
           />
 
           <div className="flex-1">
@@ -187,10 +190,14 @@ export default function Page() {
       </div>
 
       {/* FOOTER */}
-      <div className="text-center text-[12px] text-gray-500 mt-2">
-        Powered by <br />
-        <b className="text-white">UPI ✔ YES BANK</b>
-      </div>
+      <div className="text-center text-[10px] text-gray-500 mt-5 flex flex-col items-center">
+  <span>Powered by</span>
+
+  <img
+    src="https://i.ibb.co/ZzNzJVZ8/Chat-GPT-Image-Apr-30-2026-04-24-56-PM-1.png"
+    className="w-[100px] mt-[-2px] "
+  />
+</div>
 
       {/* INPUTS */}
       <div className="p-3 space-y-2 mt-[200px]">
