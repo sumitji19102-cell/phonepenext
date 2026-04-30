@@ -113,7 +113,7 @@ export default function Page() {
             </div>
           </div>
 
-          <IoIosArrowUp  />
+          <IoIosArrowUp className="text-xl" />
         </div>
 
         {/* TXN */}
@@ -122,7 +122,7 @@ export default function Page() {
         </div>
 
         <div className="flex justify-between ">
-          <div className="text-[14px] font-normal">
+          <div className="text-[13px] font-normal">
             {txnId}
           </div>
 
@@ -147,7 +147,7 @@ export default function Page() {
           <div className="flex-1">
 
             <div className="flex justify-between">
-              <div className="text-[15px] font-normal">
+              <div className="text-[14px] font-normal">
                 XXXXXXX4987
               </div>
 
@@ -184,9 +184,9 @@ export default function Page() {
       <div className="m-3 bg-[#121212] rounded-[14px] p-4 flex justify-between items-center">
         <div className="flex items-center">
           <LuMessageCircleQuestion className="mr-2" />
-        <div className="text-[14px] ml-4"> Contact PhonePe Support</div> 
+        <div className="text-[13px] ml-6"> Contact PhonePe Support</div> 
         </div>
-        <MdKeyboardArrowRight />
+        <MdKeyboardArrowRight className="text-2xl"/>
       </div>
 
       {/* FOOTER */}
