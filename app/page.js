@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-
-import { FiArrowLeft, FiCopy } from "react-icons/fi";
+import { FiArrowLeft } from "react-icons/fi";
 import { FcViewDetails } from "react-icons/fc";
 import { MdKeyboardArrowUp, MdKeyboardArrowRight } from "react-icons/md";
 import { LuMessageCircleQuestion } from "react-icons/lu";
@@ -24,20 +23,20 @@ export default function Page() {
   }, []);
 
   return (
-    <div style={{ backgroundColor: "#efefef", minHeight: "100vh", fontFamily: "Roboto, sans-serif" }}>
+    <div className="bg-[#efefef] min-h-screen font-sans">
 
       {/* STATUS BAR */}
       <meta name="theme-color" content="#3F8F3A" />
 
       {/* HEADER */}
-      <div style={{ backgroundColor: "#3F8F3A", padding: "14px 16px", color: "#fff" }}>
-        <div style={{ display: "flex", alignItems: "center" }}>
-          <FiArrowLeft style={{ fontSize: "22px", marginRight: "12px" }} />
+      <div className="bg-[#3F8F3A] text-white px-4 py-3">
+        <div className="flex items-center">
+          <FiArrowLeft className="text-[22px] mr-3" />
           <div>
-            <div style={{ fontSize: "18px", fontWeight: "600" }}>
+            <div className="text-[18px] font-semibold">
               Transaction Successful
             </div>
-            <div style={{ fontSize: "13px", opacity: "0.9" }}>
+            <div className="text-[13px] opacity-90">
               {dateTime}
             </div>
           </div>
@@ -45,151 +44,116 @@ export default function Page() {
       </div>
 
       {/* CARD */}
-      <div style={{ margin: "12px", backgroundColor: "#fff", borderRadius: "14px", padding: "14px" }}>
-        
-        <div style={{ fontSize: "15px", fontWeight: "600" }}>Paid to</div>
+      <div className="m-3 bg-white rounded-[14px] p-3">
 
-        {/* USER */}
-        <div style={{ display: "flex", alignItems: "center", marginTop: "12px" }}>
-          <div style={{
-            width: "44px",
-            height: "44px",
-            borderRadius: "50%",
-            backgroundColor: "#49A7F3",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            color: "#fff",
-            fontWeight: "600",
-            marginRight: "12px"
-          }}>
+        <div className="text-[15px] font-semibold">Paid to</div>
+
+        <div className="flex items-center mt-3">
+          <div className="w-11 h-11 rounded-full bg-[#49A7F3] flex items-center justify-center text-white font-semibold mr-3">
             AS
           </div>
 
-          <div style={{ flex: "1" }}>
-            <div style={{ fontSize: "16px", fontWeight: "500" }}>
+          <div className="flex-1">
+            <div className="text-[16px] font-medium">
               Ankaraju Sridhar
             </div>
-            <div style={{ fontSize: "13px", color: "#666" }}>
+            <div className="text-[13px] text-gray-500">
               ankarajusridhar12@axl
             </div>
           </div>
 
-          <div style={{ fontSize: "16px", fontWeight: "600" }}>₹15</div>
+          <div className="text-[16px] font-semibold">₹15</div>
         </div>
 
-        {/* Divider */}
-        <div style={{ height: "1px", backgroundColor: "#eee", margin: "14px 0" }} />
+        <div className="h-[1px] bg-gray-200 my-3"></div>
 
-        {/* BANKING NAME */}
-        <div style={{ display: "flex", alignItems: "center" }}>
-          <div style={{ fontSize: "14px", color: "#555" }}>
-            Banking Name&nbsp;&nbsp;:
-          </div>
-          <div style={{ marginLeft: "8px", fontSize: "14px" }}>
-            Ankaraju Sridhar
-          </div>
+        {/* BANK */}
+        <div className="flex items-center text-[14px] text-gray-600">
+          Banking Name :
+          <span className="ml-2 text-black">Ankaraju Sridhar</span>
           <img
             src="https://cdn-icons-png.flaticon.com/512/5972/5972778.png"
-            style={{ width: "16px", height: "16px", marginLeft: "6px" }}
+            className="w-4 h-4 ml-1"
           />
         </div>
 
-        {/* TRANSFER HEADER WITH ICONS */}
-        <div style={{ display: "flex", alignItems: "center", marginTop: "16px", justifyContent: "space-between" }}>
-          
-          <div style={{ display: "flex", alignItems: "center" }}>
-            <FcViewDetails style={{ fontSize: "18px", marginRight: "6px", color: "#000" }} />
-            <div style={{ fontSize: "16px", fontWeight: "600" }}>
+        {/* TRANSFER HEADER */}
+        <div className="flex justify-between items-center mt-4">
+          <div className="flex items-center">
+            <FcViewDetails className="text-[18px] mr-1 text-black" />
+            <div className="text-[16px] font-semibold">
               Transfer Details
             </div>
           </div>
-
-          <MdKeyboardArrowUp style={{ fontSize: "22px", color: "#000" }} />
+          <MdKeyboardArrowUp className="text-[22px]" />
         </div>
 
         {/* Transaction ID */}
-        <div style={{ marginTop: "10px", fontSize: "13px", color: "#777" }}>
+        <div className="mt-3 text-[13px] text-gray-500">
           Transaction ID
         </div>
 
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-          <div style={{ fontSize: "14px", fontWeight: "500" }}>
+        <div className="flex justify-between items-center">
+          <div className="text-[14px] font-medium">
             T2604081031566625975184
           </div>
-          <FiCopy style={{ color: "#6a1b9a", fontSize: "16px" }} />
+
+          {/* 🔥 YOUR CUSTOM COPY ICON */}
+          <img
+            src="https://i.ibb.co/ym78vn9x/Chat-GPT-Image-Apr-30-2026-06-07-08-AM-removebg-preview.png"
+            className="w-[30px]  object-contain"
+          />
         </div>
 
         {/* Debited */}
-        <div style={{ marginTop: "12px", fontSize: "13px", color: "#777" }}>
+        <div className="mt-3 text-[13px] text-gray-500">
           Debited from
         </div>
 
-        <div style={{ display: "flex", alignItems: "center", marginTop: "6px" }}>
-          <div style={{
-            width: "26px",
-            height: "26px",
-            borderRadius: "50%",
-            border: "1px solid #ddd",
-            marginRight: "8px"
-          }} />
-          <div style={{ flex: "1", fontSize: "14px" }}>
+        <div className="flex items-center mt-1">
+          <div className="w-6 h-6 rounded-full border mr-2"></div>
+          <div className="flex-1 text-[14px]">
             XXXXXXX4987
           </div>
-          <div style={{ fontWeight: "500" }}>₹15</div>
+          <div className="font-medium">₹15</div>
         </div>
 
         {/* UTR */}
-        <div style={{ display: "flex", justifyContent: "space-between", marginTop: "6px" }}>
-          <div style={{ fontSize: "14px", color: "#555" }}>
+        <div className="flex justify-between mt-1">
+          <div className="text-[14px] text-gray-600">
             UTR: 633185827829
           </div>
-          <FiCopy style={{ color: "#6a1b9a", fontSize: "16px" }} />
+
+          {/* 🔥 YOUR CUSTOM COPY ICON */}
+          <img
+            src="https://i.ibb.co/ym78vn9x/Chat-GPT-Image-Apr-30-2026-06-07-08-AM-removebg-preview.png"
+            className="w-[30px] object-contain"
+          />
         </div>
 
-        {/* Divider */}
-        <div style={{ height: "1px", backgroundColor: "#eee", margin: "14px 0" }} />
+        <div className="h-[1px] bg-gray-200 my-3"></div>
 
-        {/* ACTION BUTTONS */}
-        <div style={{ display: "flex", justifyContent: "space-between", textAlign: "center" }}>
-          {["Send Again", "View History", "Split Expense", "Share Receipt"].map((item, i) => (
-            <div key={i}>
-              <div style={{
-                width: "50px",
-                height: "50px",
-                borderRadius: "50%",
-                backgroundColor: "#EDE7F6",
-                margin: "auto"
-              }} />
-              <div style={{ fontSize: "12px", marginTop: "6px" }}>
-                {item}
-              </div>
-            </div>
-          ))}
+        {/* 🔥 IMAGE INSTEAD OF ACTION BUTTONS */}
+        <div className="flex justify-center">
+          <img
+            src="https://i.ibb.co/KxS9m62J/photo-2026-04-22-11-34-23.jpg"
+            className="w-full  object-contain"
+          />
         </div>
+
       </div>
 
       {/* SUPPORT */}
-      <div style={{
-        margin: "12px",
-        backgroundColor: "#fff",
-        borderRadius: "14px",
-        padding: "16px",
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center"
-      }}>
-        
-        <div style={{ display: "flex", alignItems: "center" }}>
-          <LuMessageCircleQuestion style={{ fontSize: "20px", marginRight: "8px" }} />
-          <div>Contact PhonePe Support</div>
+      <div className="m-3 bg-white rounded-[14px] p-4 flex justify-between items-center">
+        <div className="flex items-center">
+          <LuMessageCircleQuestion className="text-[20px] mr-2" />
+          Contact PhonePe Support
         </div>
-
-        <MdKeyboardArrowRight style={{ fontSize: "22px" }} />
+        <MdKeyboardArrowRight className="text-[22px]" />
       </div>
 
       {/* FOOTER */}
-      <div style={{ textAlign: "center", fontSize: "12px", color: "#666", marginTop: "10px" }}>
+      <div className="text-center text-[12px] text-gray-500 mt-2">
         Powered by <br />
         <b>UPI ✔ YES BANK</b>
       </div>
