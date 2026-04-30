@@ -45,7 +45,7 @@ export default function Page() {
       <meta name="theme-color" content="#2ad11e" />
 
       {/* HEADER */}
-      <div className="bg-[#3F8F3A] px-4 py-3 pt-10">
+      <div className="bg-[#3F8F3A] px-4 py-2 pt-10">
         <div className="flex items-center gap-6">
           <FiArrowLeft className="text-[22px]" />
           <div>
@@ -55,7 +55,7 @@ export default function Page() {
             </div>
 
             {/* NORMAL */}
-            <div className="text-[13px] opacity-90 font-normal">
+            <div className="text-[13px] opacity-90 font-normal mt-[-2px]">
               {dateTime}
             </div>
           </div>
@@ -92,7 +92,7 @@ export default function Page() {
           <span className="ml-2 text-white font-normal">{name}</span>
           <img
             src="https://cdn-icons-png.flaticon.com/512/5972/5972778.png"
-            className="w-4 h-4 ml-1"
+            className="w-[12px] ml-1"
           />
         </div>
 
@@ -102,10 +102,10 @@ export default function Page() {
 
             <img
               src="https://i.ibb.co/dsmmrk1D/Chat-GPT-Image-Apr-30-2026-07-50-47-AM-removebg-preview.png"
-              className="w-[18px] h-[18px] mr-2"
+              className="w-[25px] mr-2"
             />
 
-            <div className="text-[16px] font-normal">
+            <div className="text-[16px] font-thin">
               Transfer Details
             </div>
           </div>
