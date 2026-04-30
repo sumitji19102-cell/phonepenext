@@ -1,221 +1,197 @@
 "use client";
-import { useState, useEffect } from "react";
-import { FaArrowLeft, FaChevronDown } from "react-icons/fa";
-import { MdOutlineFileCopy, MdKeyboardArrowRight } from "react-icons/md";
+import { useEffect, useState } from "react";
+
+import { FiArrowLeft, FiCopy } from "react-icons/fi";
+import { FcViewDetails } from "react-icons/fc";
+import { MdKeyboardArrowUp, MdKeyboardArrowRight } from "react-icons/md";
 import { LuMessageCircleQuestion } from "react-icons/lu";
 
-// Transfer Icon
-const TransferIcon = () => (
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="black" strokeWidth="1.5">
-    <rect x="3" y="3" width="18" height="18" rx="2" />
-    <line x1="8" y1="8" x2="16" y2="8" />
-    <line x1="8" y1="12" x2="16" y2="12" />
-    <line x1="8" y1="16" x2="12" y2="16" />
-  </svg>
-);
-
-// Verified Icon
-const VerifiedIcon = () => (
-  <svg width="16" height="16" viewBox="0 0 100 100">
-    <path d="M50 5 Q70 15 85 25 Q90 60 75 80 Q60 95 50 95 Q40 95 25 80 Q10 60 15 25 Q30 15 50 5 Z" fill="#22c55e"/>
-    <path d="M30 50 L45 65 L70 35" stroke="black" strokeWidth="6" fill="none" strokeLinecap="round"/>
-  </svg>
-);
-
 export default function Page() {
-  const [open, setOpen] = useState(false);
-  const [time, setTime] = useState("");
-
-  // Inputs
-  const [name, setName] = useState("Ankaraju Sridhar");
-  const [upi, setUpi] = useState("ankarajusridhar12@axl");
-  const [amount, setAmount] = useState("15");
-
-  // Random IDs
-  const [transactionId, setTransactionId] = useState("");
-  const [utr, setUtr] = useState("");
-
-  const generateRandomNumber = (length) => {
-    let result = "";
-    for (let i = 0; i < length; i++) {
-      result += Math.floor(Math.random() * 10);
-    }
-    return result;
-  };
+  const [dateTime, setDateTime] = useState("");
 
   useEffect(() => {
     const now = new Date();
-
-    const t = now.toLocaleTimeString("en-IN", {
-      hour: "numeric",
-      minute: "2-digit",
-      hour12: true,
-    });
-
-    const d = now.toLocaleDateString("en-IN", {
+    const date = now.toLocaleDateString("en-IN", {
       day: "2-digit",
       month: "short",
       year: "numeric",
     });
-
-    setTime(`${t} on ${d}`);
-    setTransactionId("T" + generateRandomNumber(22));
-    setUtr(generateRandomNumber(12));
+    const time = now.toLocaleTimeString("en-IN", {
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+    setDateTime(`${time} on ${date}`);
   }, []);
 
   return (
-    <div className="bg-[#f5f5f5] text-black">
+    <div style={{ backgroundColor: "#efefef", minHeight: "100vh", fontFamily: "Roboto, sans-serif" }}>
+
+      {/* STATUS BAR */}
+      <meta name="theme-color" content="#3F8F3A" />
 
       {/* HEADER */}
-      <div className="bg-[#2e7d32] px-4 pt-10 pb-2 text-white">
-        <div className="flex items-center gap-4">
-          <FaArrowLeft />
+      <div style={{ backgroundColor: "#3F8F3A", padding: "14px 16px", color: "#fff" }}>
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <FiArrowLeft style={{ fontSize: "22px", marginRight: "12px" }} />
           <div>
-            <h1 className="text-sm font-semibold">Transaction Successful</h1>
-            <p className="text-[12px] text-white/90">{time}</p>
+            <div style={{ fontSize: "18px", fontWeight: "600" }}>
+              Transaction Successful
+            </div>
+            <div style={{ fontSize: "13px", opacity: "0.9" }}>
+              {dateTime}
+            </div>
           </div>
         </div>
       </div>
 
-      {/* CONTENT */}
-      <div className="px-3 mt-4 space-y-3 pb-40">
+      {/* CARD */}
+      <div style={{ margin: "12px", backgroundColor: "#fff", borderRadius: "14px", padding: "14px" }}>
+        
+        <div style={{ fontSize: "15px", fontWeight: "600" }}>Paid to</div>
 
-        <div className="bg-white p-4 rounded-2xl space-y-4 shadow-sm">
+        {/* USER */}
+        <div style={{ display: "flex", alignItems: "center", marginTop: "12px" }}>
+          <div style={{
+            width: "44px",
+            height: "44px",
+            borderRadius: "50%",
+            backgroundColor: "#49A7F3",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            color: "#fff",
+            fontWeight: "600",
+            marginRight: "12px"
+          }}>
+            AS
+          </div>
 
-          <p className="text-sm">Paid to</p>
-
-          {/* Paid To */}
-          <div className="flex justify-between items-center">
-            <div className="flex gap-3 items-center">
-              <div className="w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold">
-                {name.charAt(0)}
-              </div>
-              <div>
-                <p className="font-semibold">{name}</p>
-                <p className="text-sm text-gray-500">{upi}</p>
-              </div>
+          <div style={{ flex: "1" }}>
+            <div style={{ fontSize: "16px", fontWeight: "500" }}>
+              Ankaraju Sridhar
             </div>
-            <p className="text-lg font-semibold">₹{amount}</p>
-          </div>
-
-          <div className="border-b border-gray-300"></div>
-
-          {/* Banking Name */}
-          <div className="text-sm">
-            <span className="text-gray-500">Banking Name :</span>
-            <span className="ml-2 inline-flex items-center gap-1">
-              {name}
-              <VerifiedIcon />
-            </span>
-          </div>
-
-          <div className="border-b border-gray-300"></div>
-
-          {/* Transfer Details */}
-          <div onClick={() => setOpen(!open)} className="flex justify-between items-center cursor-pointer">
-            <div className="flex items-center gap-3">
-              <TransferIcon />
-              <span>Transfer Details</span>
+            <div style={{ fontSize: "13px", color: "#666" }}>
+              ankarajusridhar12@axl
             </div>
-            <FaChevronDown className={`${open ? "rotate-180" : ""}`} />
           </div>
 
-          {/* DETAILS */}
-          {open && (
-            <div className="text-sm space-y-4">
-
-              {/* Transaction ID */}
-              <div>
-                <p className="text-xs text-gray-500">Transaction ID</p>
-                <div className="flex justify-between items-center">
-                  <span>{transactionId}</span>
-                  <MdOutlineFileCopy className="text-purple-500 text-lg" />
-                </div>
-              </div>
-
-              {/* Debited From */}
-              <div>
-                <p className="text-xs text-gray-500 mb-2">Debited from</p>
-
-                <div className="flex gap-3 items-center">
-                  <img
-                    src="https://play-lh.googleusercontent.com/dYccpbwJFL2BXc1YsOSCPjNX9CmGwqvjB-hMtkCltd9ijBQcyEu5c8sJNyTbNBXnOgI=w480-h960-rw"
-                    className="w-10 h-10 rounded-xl bg-white p-1"
-                  />
-
-                  <div className="flex-1">
-                    <div className="flex justify-between items-center">
-                      <span>XXXXXXX4987</span>
-                      <span className="font-semibold">₹{amount}</span>
-                    </div>
-
-                    <div className="flex justify-between items-center mt-2">
-                      <span className="text-gray-500">UTR: {utr}</span>
-                      <MdOutlineFileCopy className="text-purple-500 text-lg" />
-                    </div>
-                  </div>
-                </div>
-
-                <div className="border-b border-gray-300 mt-3"></div>
-              </div>
-
-            </div>
-          )}
-
-          {/* ACTION IMAGE */}
-          <div className="pt">
-            <img
-              src="https://i.ibb.co/G4zH0QDg/Chat-GPT-Image-Apr-28-2026-07-54-30-AM-removebg-preview.png"
-              className="pt-[-100px]"
-            />
-          </div>
-
+          <div style={{ fontSize: "16px", fontWeight: "600" }}>₹15</div>
         </div>
 
-        {/* SUPPORT */}
-        <div className="bg-white p-3 rounded-2xl flex justify-between items-center shadow-sm">
-          <div className="flex items-center gap-2">
-            <LuMessageCircleQuestion className="text-gray-600" />
-            <span className="text-sm">Contact PhonePe Support</span>
+        {/* Divider */}
+        <div style={{ height: "1px", backgroundColor: "#eee", margin: "14px 0" }} />
+
+        {/* BANKING NAME */}
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <div style={{ fontSize: "14px", color: "#555" }}>
+            Banking Name&nbsp;&nbsp;:
           </div>
-          <MdKeyboardArrowRight className="text-gray-500" />
+          <div style={{ marginLeft: "8px", fontSize: "14px" }}>
+            Ankaraju Sridhar
+          </div>
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/5972/5972778.png"
+            style={{ width: "16px", height: "16px", marginLeft: "6px" }}
+          />
         </div>
 
-        {/* FOOTER */}
-        <div className="text-center text-gray-500 text-sm mt-6">
-          <p>Powered by</p>
-          <img src="https://i.ibb.co/ympvFLYn/Chat-GPT-Image-Apr-28-2026-07-45-55-AM-removebg-preview.png" className="mx-auto w-[300px] mt-[-80px] " />
+        {/* TRANSFER HEADER WITH ICONS */}
+        <div style={{ display: "flex", alignItems: "center", marginTop: "16px", justifyContent: "space-between" }}>
+          
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <FcViewDetails style={{ fontSize: "18px", marginRight: "6px", color: "#000" }} />
+            <div style={{ fontSize: "16px", fontWeight: "600" }}>
+              Transfer Details
+            </div>
+          </div>
+
+          <MdKeyboardArrowUp style={{ fontSize: "22px", color: "#000" }} />
         </div>
 
+        {/* Transaction ID */}
+        <div style={{ marginTop: "10px", fontSize: "13px", color: "#777" }}>
+          Transaction ID
+        </div>
+
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+          <div style={{ fontSize: "14px", fontWeight: "500" }}>
+            T2604081031566625975184
+          </div>
+          <FiCopy style={{ color: "#6a1b9a", fontSize: "16px" }} />
+        </div>
+
+        {/* Debited */}
+        <div style={{ marginTop: "12px", fontSize: "13px", color: "#777" }}>
+          Debited from
+        </div>
+
+        <div style={{ display: "flex", alignItems: "center", marginTop: "6px" }}>
+          <div style={{
+            width: "26px",
+            height: "26px",
+            borderRadius: "50%",
+            border: "1px solid #ddd",
+            marginRight: "8px"
+          }} />
+          <div style={{ flex: "1", fontSize: "14px" }}>
+            XXXXXXX4987
+          </div>
+          <div style={{ fontWeight: "500" }}>₹15</div>
+        </div>
+
+        {/* UTR */}
+        <div style={{ display: "flex", justifyContent: "space-between", marginTop: "6px" }}>
+          <div style={{ fontSize: "14px", color: "#555" }}>
+            UTR: 633185827829
+          </div>
+          <FiCopy style={{ color: "#6a1b9a", fontSize: "16px" }} />
+        </div>
+
+        {/* Divider */}
+        <div style={{ height: "1px", backgroundColor: "#eee", margin: "14px 0" }} />
+
+        {/* ACTION BUTTONS */}
+        <div style={{ display: "flex", justifyContent: "space-between", textAlign: "center" }}>
+          {["Send Again", "View History", "Split Expense", "Share Receipt"].map((item, i) => (
+            <div key={i}>
+              <div style={{
+                width: "50px",
+                height: "50px",
+                borderRadius: "50%",
+                backgroundColor: "#EDE7F6",
+                margin: "auto"
+              }} />
+              <div style={{ fontSize: "12px", marginTop: "6px" }}>
+                {item}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
 
-      {/* INPUTS (SCROLL AFTER) */}
-      <div className="p-4 bg-white border-t border-gray-300 space-y-3">
+      {/* SUPPORT */}
+      <div style={{
+        margin: "12px",
+        backgroundColor: "#fff",
+        borderRadius: "14px",
+        padding: "16px",
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center"
+      }}>
+        
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <LuMessageCircleQuestion style={{ fontSize: "20px", marginRight: "8px" }} />
+          <div>Contact PhonePe Support</div>
+        </div>
 
-        <input
-          type="text"
-          placeholder="Enter Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          className="w-full p-3 rounded-lg border border-gray-300"
-        />
+        <MdKeyboardArrowRight style={{ fontSize: "22px" }} />
+      </div>
 
-        <input
-          type="text"
-          placeholder="Enter UPI ID"
-          value={upi}
-          onChange={(e) => setUpi(e.target.value)}
-          className="w-full p-3 rounded-lg border border-gray-300"
-        />
-
-        <input
-          type="number"
-          placeholder="Enter Amount"
-          value={amount}
-          onChange={(e) => setAmount(e.target.value)}
-          className="w-full p-3 rounded-lg border border-gray-300"
-        />
-
+      {/* FOOTER */}
+      <div style={{ textAlign: "center", fontSize: "12px", color: "#666", marginTop: "10px" }}>
+        Powered by <br />
+        <b>UPI ✔ YES BANK</b>
       </div>
 
     </div>
