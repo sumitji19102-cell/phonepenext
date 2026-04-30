@@ -125,16 +125,16 @@ export default function Page() {
 
           <img
             src="https://i.ibb.co/ym78vn9x/Chat-GPT-Image-Apr-30-2026-06-07-08-AM-removebg-preview.png"
-            className="w-[45px]"
+            className="w-[40px] mt-[-5px]"
           />
         </div>
 
         {/* DEBIT */}
-        <div className="mt-3 text-[13px] text-gray-400 font-normal">
+        <div className=" text-[13px] text-gray-400 font-normal">
           Debited from
         </div>
 
-        <div className="flex items-start mt-2">
+        <div className="flex items-start ">
 
           <img
             src="https://play-lh.googleusercontent.com/dYccpbwJFL2BXc1YsOSCPjNX9CmGwqvjB-hMtkCltd9ijBQcyEu5c8sJNyTbNBXnOgI"
@@ -158,7 +158,7 @@ export default function Page() {
 
               <img
                 src="https://i.ibb.co/ym78vn9x/Chat-GPT-Image-Apr-30-2026-06-07-08-AM-removebg-preview.png"
-                className="w-[45px]"
+                className="w-[40px] mt-[-5px]"
               />
             </div>
 
