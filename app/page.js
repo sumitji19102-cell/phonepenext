@@ -106,7 +106,7 @@ export default function Page() {
 
           {/* 🔥 YOUR CUSTOM COPY ICON */}
           <img
-            src="https://i.ibb.co/ym78vn9x/Chat-GPT-Image-Apr-30-2026-06-07-08-AM-removebg-preview.png"
+            src="https://i.ibb.co/QjD0bZMZ/Chat-GPT-Image-Apr-30-2026-01-31-27-PM.png"
             className="w-[30px]  object-contain"
           />
         </div>
@@ -145,7 +145,7 @@ export default function Page() {
 
       {/* COPY ICON */}
       <img
-        src="https://i.ibb.co/ym78vn9x/Chat-GPT-Image-Apr-30-2026-06-07-08-AM-removebg-preview.png"
+        src="https://i.ibb.co/QjD0bZMZ/Chat-GPT-Image-Apr-30-2026-01-31-27-PM.png"
         className="w-[30px] object-contain"
       />
     </div>
