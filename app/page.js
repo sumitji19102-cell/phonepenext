@@ -89,7 +89,7 @@ export default function Page() {
         {/* BANK */}
         <div className="flex items-center text-[14px] text-gray-400 font-normal">
           Banking Name :
-          <span className="ml-2 text-white font-normal">{name}</span>
+          <span className="ml-2  text-gray-400 font-normal">{name}</span>
           <img
             src="https://cdn-icons-png.flaticon.com/512/5972/5972778.png"
             className="w-[12px] ml-1"
@@ -105,7 +105,7 @@ export default function Page() {
               className="w-[25px] mr-2"
             />
 
-            <div className="text-[16px] font-normal">
+            <div className="text-[13px] font-normal">
               Transfer Details
             </div>
           </div>
@@ -118,7 +118,7 @@ export default function Page() {
           Transaction ID
         </div>
 
-        <div className="flex justify-between">
+        <div className="flex justify-between ">
           <div className="text-[14px] font-normal">
             {txnId}
           </div>
