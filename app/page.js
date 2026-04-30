@@ -136,8 +136,8 @@ export default function Page() {
         {/* 🔥 IMAGE INSTEAD OF ACTION BUTTONS */}
         <div className="flex justify-center">
           <img
-            src="https://i.ibb.co/KxS9m62J/photo-2026-04-22-11-34-23.jpg"
-            className="w-full  object-contain"
+            src="https://i.ibb.co/svQRqggq/photo-2026-04-21-12-37-47-removebg-preview-1.png"
+            className="w-full"
           />
         </div>
 
