@@ -171,7 +171,7 @@ export default function Page() {
         </div>
 
         <div className="flex justify-center my-3">
-  <div className="h-[1px] w-[400px] bg-gray-700"></div>
+  <div className="h-[1px] w-[600px] bg-gray-700"></div>
 </div>
         {/* IMAGE */}
         <div className="flex justify-center mb-3">
