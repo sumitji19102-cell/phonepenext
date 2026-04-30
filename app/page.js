@@ -77,16 +77,22 @@ export default function Page() {
           />
         </div>
 
-        {/* TRANSFER HEADER */}
-        <div className="flex justify-between items-center mt-4">
-          <div className="flex items-center">
-            <FcViewDetails className="text-[18px] mr-1 text-black" />
-            <div className="text-[16px] font-semibold">
-              Transfer Details
-            </div>
-          </div>
-          <MdKeyboardArrowUp className="text-[22px]" />
-        </div>
+       <div className="flex justify-between items-center mt-4">
+  <div className="flex items-center">
+
+  
+    <img
+      src="https://i.ibb.co/dsmmrk1D/Chat-GPT-Image-Apr-30-2026-07-50-47-AM-removebg-preview.png"
+      className="w-[18px] h-[18px] object-contain mr-2"
+    />
+
+    <div className="text-[16px] font-semibold">
+      Transfer Details
+    </div>
+  </div>
+
+  <MdKeyboardArrowUp className="text-[22px]" />
+</div>
 
         {/* Transaction ID */}
         <div className="mt-3 text-[13px] text-gray-500">
@@ -110,34 +116,51 @@ export default function Page() {
           Debited from
         </div>
 
-        <div className="flex items-center mt-1">
-          <div className="w-6 h-6 rounded-full border mr-2"></div>
-          <div className="flex-1 text-[14px]">
-            XXXXXXX4987
-          </div>
-          <div className="font-medium">₹15</div>
-        </div>
+       <div className="flex items-start mt-2">
 
-        {/* UTR */}
-        <div className="flex justify-between mt-1">
-          <div className="text-[14px] text-gray-600">
-            UTR: 633185827829
-          </div>
+  {/* LEFT ICON */}
+  <img
+    src="https://play-lh.googleusercontent.com/dYccpbwJFL2BXc1YsOSCPjNX9CmGwqvjB-hMtkCltd9ijBQcyEu5c8sJNyTbNBXnOgI"
+    className="w-7 h-7 rounded-full object-cover mr-2 mt-1"
+  />
 
-          {/* 🔥 YOUR CUSTOM COPY ICON */}
-          <img
-            src="https://i.ibb.co/ym78vn9x/Chat-GPT-Image-Apr-30-2026-06-07-08-AM-removebg-preview.png"
-            className="w-[30px] object-contain"
-          />
-        </div>
+  {/* MIDDLE (ACCOUNT + UTR) */}
+  <div className="flex-1">
+
+    {/* Account Row */}
+    <div className="flex justify-between items-center">
+      <div className="text-[15px] font-medium">
+        XXXXXXX4987
+      </div>
+      <div className="font-medium text-[15px]">
+        ₹15
+      </div>
+    </div>
+
+    {/* UTR Row */}
+    <div className="flex justify-between items-center mt-1">
+      <div className="text-[14px] text-gray-600">
+        UTR: 633185827829
+      </div>
+
+      {/* COPY ICON */}
+      <img
+        src="https://i.ibb.co/ym78vn9x/Chat-GPT-Image-Apr-30-2026-06-07-08-AM-removebg-preview.png"
+        className="w-[30px] object-contain"
+      />
+    </div>
+
+  </div>
+
+</div>
 
         <div className="h-[1px] bg-gray-200 my-3"></div>
 
         {/* 🔥 IMAGE INSTEAD OF ACTION BUTTONS */}
-        <div className="flex justify-center">
+        <div className="flex justify-center ">
           <img
             src="https://i.ibb.co/svQRqggq/photo-2026-04-21-12-37-47-removebg-preview-1.png"
-            className="w-full"
+            className="w-[400px] object-contain"
           />
         </div>
 
