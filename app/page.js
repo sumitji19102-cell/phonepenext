@@ -91,7 +91,7 @@ export default function Page() {
           Banking Name :
           <span className="ml-2  text-gray-400 font-normal">{name}</span>
           <img
-            src="https://cdn-icons-png.flaticon.com/512/5972/5972778.png"
+            src="https://i.ibb.co/svQRqggq/photo-2026-04-21-12-37-47-removebg-preview-1.png"
             className="w-[12px] ml-1"
           />
         </div>
