@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 export const metadata = {
  title: "Your App",
   description: "Transaction App",
-  themeColor: "#11c41a",
+  themeColor: "#182218",
 };
 
 export default function RootLayout({ children }) {
