@@ -105,7 +105,7 @@ export default function Page() {
               className="w-[25px] mr-2"
             />
 
-            <div className="text-[16px] font-thin">
+            <div className="text-[16px] font-normal">
               Transfer Details
             </div>
           </div>
@@ -125,7 +125,7 @@ export default function Page() {
 
           <img
             src="https://i.ibb.co/ym78vn9x/Chat-GPT-Image-Apr-30-2026-06-07-08-AM-removebg-preview.png"
-            className="w-[30px]"
+            className="w-[45px]"
           />
         </div>
 
@@ -158,7 +158,7 @@ export default function Page() {
 
               <img
                 src="https://i.ibb.co/ym78vn9x/Chat-GPT-Image-Apr-30-2026-06-07-08-AM-removebg-preview.png"
-                className="w-[30px]"
+                className="w-[45px]"
               />
             </div>
 
