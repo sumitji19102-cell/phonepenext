@@ -85,7 +85,9 @@ export default function Page() {
           <div className="text-[16px] font-bold">₹15</div>
         </div>
 
-        <div className="h-[1px] bg-gray-700 my-3"></div>
+<div className="flex justify-center my-3">
+  <div className="h-[1px] w-[320px] bg-gray-700"></div>
+</div>
 
         {/* BANK */}
         <div className="flex items-center text-[12px] text-gray-400 font-normal">
@@ -96,9 +98,9 @@ export default function Page() {
             className="w-[24px] "
           />
         </div>
-
-         <div className="h-[1px] bg-gray-700 my-3"></div>
-
+<div className="flex justify-center my-3">
+  <div className="h-[1px] w-[320px] bg-gray-700"></div>
+</div>
         {/* TRANSFER */}
         <div className="flex justify-between items-center mt-4">
           <div className="flex items-center">
@@ -168,10 +170,11 @@ export default function Page() {
           </div>
         </div>
 
-        <div className="h-[1px] bg-gray-700 my-3"></div>
-
+        <div className="flex justify-center my-3">
+  <div className="h-[1px] w-[320px] bg-gray-700"></div>
+</div>
         {/* IMAGE */}
-        <div className="flex justify-center">
+        <div className="flex justify-center mb-3">
           <img
             src="https://i.ibb.co/fYgRy6dT/photo-2026-04-21-12-37-47-removebg-preview-1-1.png"
             className="w-full"
