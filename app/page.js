@@ -107,7 +107,7 @@ export default function Page() {
 
             <img
               src="https://i.ibb.co/dsmmrk1D/Chat-GPT-Image-Apr-30-2026-07-50-47-AM-removebg-preview.png"
-              className="w-[25px] mr-2"
+              className="w-[27px] mr-2"
             />
 
             <div className="text-[13px] font-normal ml-2">
