@@ -110,7 +110,7 @@ export default function Page() {
               className="w-[25px] mr-2"
             />
 
-            <div className="text-[13px] font-normal">
+            <div className="text-[13px] font-normal ml-3">
               Transfer Details
             </div>
           </div>
