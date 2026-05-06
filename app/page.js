@@ -174,7 +174,7 @@ export default function Page() {
 
       </div>
 
-      <div className="m-3 mt-2 bg-[#121212] rounded-[14px] p-4 flex justify-between items-center">
+      <div className="m-3 mt-2 bg-[#171717] rounded-[14px] p-4 flex justify-between items-center">
         <div className="flex items-center">
           <LuMessageCircleQuestion className="mr-2" />
           <div className="text-[13px] ml-6"> Contact PhonePe Support</div>
