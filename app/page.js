@@ -57,7 +57,7 @@ export default function Page() {
         </div>
       </div>
 
-      <div className="mt-3 bg-[#171717] rounded-[14px] p-3 px-4 mx-2 ">
+      <div className="mt-2 bg-[#171717] rounded-[14px] p-3 px-4 mx-2 ">
 
         <div className="text-[15px] font-bold">Paid to</div>
 
@@ -82,7 +82,7 @@ export default function Page() {
           <div className="h-[1px] w-[370px] bg-gray-700"></div>
         </div>
 
-        <div className="flex items-center text-[12px] text-gray-400 font-normal">
+        <div className="flex items-center text-[12px] text-gray-300 font-normal">
           Banking Name :
           <span className="ml-2 text-[12px] text-gray-400 font-normal">{name}</span>
           <img
