@@ -182,7 +182,7 @@ export default function Page() {
         <MdKeyboardArrowRight className="text-2xl"/>
       </div>
 
-      <div className="text-center text-[10px] text-gray-400 mt-5 flex flex-col items-center">
+      <div className="text-center text-[12px] text-gray-400 mt-5 flex flex-col items-center">
         <span>Powered by</span>
 
         <img
