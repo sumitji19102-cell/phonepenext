@@ -16,79 +16,110 @@ export default function Page() {
 
   useEffect(() => {
     const now = new Date();
+
     const date = now.toLocaleDateString("en-IN", {
       day: "2-digit",
       month: "short",
       year: "numeric",
     });
+
     const time = now.toLocaleTimeString("en-IN", {
       hour: "2-digit",
       minute: "2-digit",
     });
+
     setDateTime(`${time} on ${date}`);
 
-    const randomUTR = Math.floor(100000000000 + Math.random() * 900000000000);
+    const randomUTR = Math.floor(
+      100000000000 + Math.random() * 900000000000
+    );
+
     setUtr(randomUTR.toString());
 
     let randomTxn = "T";
+
     for (let i = 0; i < 22; i++) {
       randomTxn += Math.floor(Math.random() * 10);
     }
+
     setTxnId(randomTxn);
 
   }, []);
 
   return (
-    <div className="bg-black min-h-screen font-sans text-white">
+    <div className="bg-black min-h-screen font-sans text-white font-bold tracking-wide">
 
       <meta name="theme-color" content="#2ad11e" />
 
       <div className="bg-[#3F8F3A] px-4 py-1 pt-12">
+
         <div className="flex items-center gap-5">
-          <FiArrowLeft className="text-[22px]" />
+
+          <FiArrowLeft className="text-[22px] font-bold tracking-wide" />
+
           <div>
-            <div className="text-[16px] font-semibold">
+
+            <div className="text-[16px] font-bold tracking-wide">
               Transaction Successful
             </div>
-            <div className="text-[13px] opacity-90 font-normal mt-[-5px]">
+
+            <div className="text-[13px] opacity-90 font-bold tracking-wide mt-[-5px]">
               {dateTime}
             </div>
+
           </div>
+
         </div>
+
       </div>
 
       <div className="mt-2 bg-[#171717] rounded-[14px] p-3 px-4 mx-2 ">
 
-        <div className="text-[15px] font-bold">Paid to</div>
+        <div className="text-[15px] font-bold tracking-wide">
+          Paid to
+        </div>
 
         <div className="flex items-center mt-3">
-          <div className="w-11 h-11 rounded-full bg-[#49A7F3] flex items-center justify-center font-normal mr-3">
+
+          <div className="w-11 h-11 rounded-full bg-[#49A7F3] flex items-center justify-center font-bold tracking-wide mr-3">
             {name.slice(0,2).toUpperCase()}
           </div>
 
           <div className="flex-1">
-            <div className="text-[16px] font-normal">
+
+            <div className="text-[16px] font-bold tracking-wide">
               {name}
             </div>
-            <div className="text-[13px] text-gray-400 font-normal">
+
+            <div className="text-[13px] text-gray-400 font-bold tracking-wide">
               {upi}
             </div>
+
           </div>
 
-          <div className="text-[16px] font-bold">₹15</div>
+          <div className="text-[17px] font-bold tracking-wide">
+            ₹15
+          </div>
+
         </div>
 
         <div className="flex justify-center my-3">
           <div className="h-[1px] w-[370px] bg-gray-700"></div>
         </div>
 
-        <div className="flex items-center text-[12px] text-gray-300 font-normal">
+        <div className="flex items-center text-[13px] text-gray-300 font-bold tracking-wide">
+
           Banking Name :
-          <span className="ml-2 text-[12px] text-gray-400 font-normal">{name}</span>
+
+          <span className="ml-2 text-[13px] text-gray-400 font-bold tracking-wide">
+            {name}
+          </span>
+
           <img
             src="https://i.ibb.co/wrx1Dh17/Chat-GPT-Image-Apr-30-2026-04-11-39-PM-removebg-preview.png"
             className="w-[24px]"
           />
+
         </div>
 
         <div className="flex justify-center my-3">
@@ -96,6 +127,7 @@ export default function Page() {
         </div>
 
         <div className="flex justify-between items-center mt-4">
+
           <div className="flex items-center">
 
             <img
@@ -103,62 +135,73 @@ export default function Page() {
               className="w-[27px] mr-2"
             />
 
-            {/* ✅ FIXED LINE (no conflict) */}
-            <div className="text-[13px] font-normal ml-3">
+            <div className="text-[14px] font-bold tracking-wide ml-3">
               Transfer Details
             </div>
+
           </div>
 
-          <IoIosArrowUp className="text-xl" />
+          <IoIosArrowUp className="text-xl font-bold tracking-wide" />
+
         </div>
 
-        <div className="mt-3 text-[13px] text-gray-400 font-normal">
+        <div className="mt-3 text-[14px] text-gray-400 font-bold tracking-wide">
           Transaction ID
         </div>
 
         <div className="flex justify-between ">
-          <div className="text-[13px] font-normal">
+
+          <div className="text-[16px] font-bold tracking-wide">
             {txnId}
           </div>
 
           <img
             src="https://i.ibb.co/ym78vn9x/Chat-GPT-Image-Apr-30-2026-06-07-08-AM-removebg-preview.png"
-            className="w-[40px] mt-[-5px]"
+            className="w-[50px] mt-[-10px] mr-[-8px]"
           />
+
         </div>
 
-        <div className=" text-[13px] text-gray-400 font-normal">
+        <div className=" text-[14px] text-gray-400 font-bold tracking-wide">
           Debited from
         </div>
 
         <div className="flex items-start ">
+
           <img
             src="https://play-lh.googleusercontent.com/dYccpbwJFL2BXc1YsOSCPjNX9CmGwqvjB-hMtkCltd9ijBQcyEu5c8sJNyTbNBXnOgI"
-            className="w-7 h-7 rounded-lg mr-2 mt-1"
+            className="w-8 h-8 rounded-lg mr-2 mt-1"
           />
 
           <div className="flex-1">
 
             <div className="flex justify-between">
-              <div className="text-[14px] font-normal">
+
+              <div className="text-[16px] font-bold tracking-wide">
                 XXXXXXX4987
               </div>
 
-              <div className="font-normal">₹15</div>
+              <div className="font-bold text-[17px] tracking-wide">
+                ₹15
+              </div>
+
             </div>
 
             <div className="flex justify-between mt-1">
-              <div className="text-[14px] text-gray-400 font-normal">
+
+              <div className="text-[16px] text-gray-400 font-bold tracking-wide">
                 UTR: {utr}
               </div>
 
               <img
                 src="https://i.ibb.co/ym78vn9x/Chat-GPT-Image-Apr-30-2026-06-07-08-AM-removebg-preview.png"
-                className="w-[40px] mt-[-5px]"
+                className="w-[50px] mt-[-10px] mr-[-8px]"
               />
+
             </div>
 
           </div>
+
         </div>
 
         <div className="flex justify-center my-3">
@@ -166,42 +209,59 @@ export default function Page() {
         </div>
 
         <div className="flex justify-center mb-3">
+
           <img
             src="https://i.ibb.co/fYgRy6dT/photo-2026-04-21-12-37-47-removebg-preview-1-1.png"
             className="w-full"
           />
+
         </div>
 
       </div>
 
       <div className="m-3 mt-2 bg-[#171717] rounded-[14px] p-4 flex justify-between items-center">
+
         <div className="flex items-center">
-          <LuMessageCircleQuestion className="mr-2" />
-          <div className="text-[13px] ml-6"> Contact PhonePe Support</div>
+
+          <LuMessageCircleQuestion className="mr-2 text-xl font-bold tracking-wide" />
+
+          <div className="text-[14px] ml-6 font-bold tracking-wide">
+            Contact PhonePe Support
+          </div>
+
         </div>
-        <MdKeyboardArrowRight className="text-2xl"/>
+
+        <MdKeyboardArrowRight className="text-2xl font-bold tracking-wide"/>
+
       </div>
 
-      <div className="text-center text-[12px] text-gray-400 mt-5 flex flex-col items-center">
-        <span>Powered by</span>
+      <div className="text-center text-[13px] text-gray-400 mt-5 flex flex-col items-center font-bold tracking-wide">
+
+        <span className="tracking-wide font-bold">
+          Powered by
+        </span>
 
         <img
           src="https://i.ibb.co/ZzNzJVZ8/Chat-GPT-Image-Apr-30-2026-04-24-56-PM-1.png"
           className="w-[110px] mt-[-2px]"
         />
+
       </div>
 
       <div className="p-3 space-y-2 mt-[250px]">
+
         <input
           value={name}
           onChange={(e) => setName(e.target.value)}
-          className="w-full p-2 rounded bg-[#1f1f1f]"
+          className="w-full p-2 rounded bg-[#1f1f1f] font-bold tracking-wide"
         />
+
         <input
           value={upi}
           onChange={(e) => setUpi(e.target.value)}
-          className="w-full p-2 rounded bg-[#1f1f1f]"
+          className="w-full p-2 rounded bg-[#1f1f1f] font-bold tracking-wide"
         />
+
       </div>
 
     </div>
