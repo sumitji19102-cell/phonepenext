@@ -208,7 +208,7 @@ export default function Page() {
           <div className="h-[1px] w-[370px] bg-gray-700"></div>
         </div>
 
-        <div className="flex justify-center mb-3">
+        <div className="flex justify-center ">
 
           <img
             src="https://i.ibb.co/4nZyL5xZ/Chat-GPT-Image-May-6-2026-03-14-49-PM-removebg-preview.png"
